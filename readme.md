@@ -1,0 +1,7 @@
+esercizio integrativo:
+
+SVOLGERE UN'OPERAZIONE
+ARITMETICA DI BASE A SCELTA TRA
+DUE NUMERI IMMESSI DALL'UTENTE
+
+Esercizio svolto in solitaria

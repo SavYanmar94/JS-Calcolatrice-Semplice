@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OperazioniAritm
+
+    </title>
+</head>
+<body>
+    
+    <table style="border: 1px solid black;"> 
+        <form name="form" method="post" id="form">
+        <tr> 
+            <td id="primo"><input type="text" name="primo"> </td>
+            <td id="operazioni"><select name="operations" id="sceglioperazione"><option id="piu" value="+">+</option>
+                <option id="meno" value="-">-</option><option id="diviso" value="/">/</option><option id="per" value="x">x</option>
+                                </select>
+            </td>
+        </tr>
+        <tr> 
+            <td id="secondo"><input type="text" name="secondo"> </td>
+            <td id="ug"><button type="submit" id="uguale" >=</button></td>
+        </tr>
+        <tr> 
+            <td id="risultato"> </td>
+            <td id="canc"> <button id="cancella">C</button></td>
+        </tr>
+        </form>
+    </table>
+
+
+
+
+
+    <script> 
+    
+
+
+
+    document.getElementById("operazioni").addEventListener("change",operazione); 
+
+    function operazione () { 
+
+    let scelta = document.form.operations.value; 
+
+    } 
+
+
+    document.getElementById("form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita il comportamento di submit predefinito del form
+
+        let primo = Number(document.form.primo.value);
+        let secondo = Number(document.form.secondo.value);
+
+        let scelta = document.form.operations.value;
+
+        let somma = primo + secondo;
+        let sottrazione = primo - secondo;
+        let prodotto = primo * secondo;
+        let diviso = primo / secondo;
+
+        switch (scelta) {
+            case "+":
+                document.getElementById("risultato").innerHTML = "<tr><td>" + somma + "</td></tr>";
+                break;
+
+            case "-":
+                document.getElementById("risultato").innerHTML = "<tr><td>" + sottrazione + "</td></tr>";
+                break;
+
+            case "/":
+                document.getElementById("risultato").innerHTML = "<tr><td>" + diviso + "</td></tr>";
+                break;
+
+            case "x":
+                document.getElementById("risultato").innerHTML = "<tr><td>" + prodotto + "</td></tr>";
+                break;
+
+            default:
+                document.getElementById("risultato").innerHTML = "<tr><td>" + "errore" + "</td></tr>";
+        }
+    });
+
+    document.getElementById("canc").addEventListener("click", function() { 
+        location.reload()
+    });
+    
+    </script>
+    
+</body>
+</html>
